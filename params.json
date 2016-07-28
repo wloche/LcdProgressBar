@@ -1,0 +1,6 @@
+{
+  "name": "Lcdprogressbar",
+  "tagline": "LcdProgressBar is an Arduino library for displaying a progress bar in LCD display.",
+  "body": "# What is Lcdprogressbar\r\nLcdProgressBar is an Arduino library for displaying a progress bar in LCD display.\r\n\r\n## Dependences\r\nThe LCD display must be previously initialized. This library uses LiquedCrystal library for displaying.\r\n\r\n# Expected result\r\n- ![LcbProgressBar Demo](https://www.dropbox.com/s/g4reucn95znn7yc/LcdProgressBar-2s.gif?dl=0)\r\n- [Video on Youtube](https://youtu.be/3SRARTk7fZY)\r\n\r\n# Authors and Contributors\r\n- @wloche\r\n\r\n# Support or Contact\r\n- @wloche\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
