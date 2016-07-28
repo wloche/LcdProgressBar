@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map For LcdBarGraph
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+LcdProgressBar	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setMinValue	KEYWORD2
+setMinValue	KEYWORD2
+setMaxValue	KEYWORD2
+draw		KEYWORD2
+drawValue	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
