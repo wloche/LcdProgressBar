@@ -32,35 +32,77 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a id="what-is-lcdprogressbar" class="anchor" href="#what-is-lcdprogressbar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Lcdprogressbar</h1>
+<a id="what-is-lcdprogressbar" class="anchor" href="#what-is-lcdprogressbar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is LcdProgressBar?</h1>
 
 <p>LcdProgressBar is an Arduino library for displaying a progress bar in LCD display.</p>
 
-<h2>
-<a id="dependences" class="anchor" href="#dependences" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependences</h2>
+<h1>
+<a id="dependencies" class="anchor" href="#dependencies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Dependencies</h1>
 
-<p>The LCD display must be previously initialized. This library uses LiquedCrystal library for displaying.</p>
+<p>The LCD display must be previously initialized. This library uses LiquidCrystal library for displaying.</p>
 
 <h1>
 <a id="expected-result" class="anchor" href="#expected-result" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Expected result</h1>
 
-<ul>
-<li><img src="https://www.dropbox.com/s/g4reucn95znn7yc/LcdProgressBar-2s.gif?dl=0" alt="LcbProgressBar Demo"></li>
-<li><a href="https://youtu.be/3SRARTk7fZY">Video on Youtube</a></li>
-</ul>
+<p><img src="https://github.com/wloche/LcdProgressBar/blob/master/extras/LcdProgressBar-2s.gif" alt="LcdProgressBar Demo"></p>
+
+<p><g-emoji alias="movie_camera" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3a5.png">🎥</g-emoji> <a href="https://youtu.be/3SRARTk7fZY">Video on Youtube</a></p>
+
+<h1>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h1>
+
+<p><g-emoji alias="information_source" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/2139.png">ℹ️</g-emoji> Refer to full example: <a href="https://github.com/wloche/LcdProgressBar/blob/master/examples/Timer/Timer.ino">examples/Timer/Timer.ino</a>, Breadboard and electronic [[schema here|LcdProgressBar Electronic schemas]].</p>
+
+<p>What you need is extracted bellow.</p>
+
+<h2>
+<a id="includes" class="anchor" href="#includes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>includes</h2>
+
+<div class="highlight highlight-source-c++"><pre>#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>LiquidCrystal.h<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>LcdProgressBar.h<span class="pl-pds">&gt;</span></span> <span class="pl-c">//## Include this lib</span></pre></div>
+
+<h2>
+<a id="initializations" class="anchor" href="#initializations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initializations</h2>
+
+<div class="highlight highlight-source-c++"><pre>LiquidCrystal <span class="pl-en">lcd</span>(<span class="pl-c1">12</span>, <span class="pl-c1">11</span>, <span class="pl-c1">5</span>, <span class="pl-c1">4</span>, <span class="pl-c1">3</span>, <span class="pl-c1">2</span>);
+LcdProgressBar <span class="pl-en">lpg</span>(&amp;lcd, <span class="pl-c1">1</span>, <span class="pl-c1">16</span>);</pre></div>
+
+<h2>
+<a id="initializing-the-progress-bar" class="anchor" href="#initializing-the-progress-bar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initializing the progress bar</h2>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-k">void</span> <span class="pl-en">initLpg</span>()
+{
+  <span class="pl-c">//-- start time</span>
+  startedMillis = <span class="pl-c1">millis</span>();
+
+  <span class="pl-c">//-- Set min and max values</span>
+  lpg.<span class="pl-c1">setMinValue</span>(startedMillis);
+  lpg.<span class="pl-c1">setMaxValue</span>(startedMillis + duration);
+}</pre></div>
+
+<h2>
+<a id="drawing-the-progress-bar" class="anchor" href="#drawing-the-progress-bar" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Drawing the progress bar</h2>
+
+<div class="highlight highlight-source-c++"><pre>  <span class="pl-c">//-- draw progress bar</span>
+  lpg.draw(currentMillis);</pre></div>
+
+<p>or via the alias <code>drawValue</code> (the <a href="https://github.com/prampec/LcdBarGraph">LcdBarGraph</a> way <g-emoji alias="wink" fallback-src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f609.png">😉</g-emoji>):</p>
+
+<div class="highlight highlight-source-c++"><pre>  <span class="pl-c">//-- draw progress bar</span>
+  lpg.drawValue(currentMillis);</pre></div>
 
 <h1>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h1>
 
 <ul>
-<li><a href="https://github.com/wloche" class="user-mention">@wloche</a></li>
+<li><a href="https://github.com/wloche">Wilfried Loche</a></li>
 </ul>
 
 <h1>
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h1>
 
 <ul>
-<li><a href="https://github.com/wloche" class="user-mention">@wloche</a></li>
+<li><a href="https://github.com/wloche">Wilfried Loche</a></li>
 </ul>
       </section>
     </div>
