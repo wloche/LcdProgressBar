@@ -1,10 +1,10 @@
 /*
-  LcdProgressBar.cpp - Firmata library v1.0.0 - 2016-17-28
+  LcdProgressBar.cpp - LcdProgressBar library v1.0.1 - 2017-02-02
 
   LcdProgressBar is an Arduino library for displaying a progress bar in LCD display,
   which is previously initialized. This library uses LiquidCrystal library for displaying.
 
-  Copyright (c) 20&6-2008 Wilfried Loche.  All rights reserved.
+  Copyright (c) Wilfried Loche.  All rights reserved.
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
